@@ -11,29 +11,33 @@ const windowHeight=Dimensions.get('window').height;
 const Login=(props)=>{
     const [visible,setvisible]=useState(false);
     const hidModal=()=>{setvisible(false)}
+    const [mdtype,setmdtype]=useState("FACEBOOK")
     return(<>
+    <Modalcomp visible={visible} TYPE={mdtype} hidModal={()=>{hidModal()}}>
+        <Text>Modal</Text>
+    </Modalcomp>
     <SafeAreaView style={styles.container}>
     <View style={styles.logocontainer}>
         <Image resizeMethod='auto' style={styles.loginlogo} resizeMode='contain' source={require('../../../assets/Triangle/Login_logo.png')} />
     </View>
     <View style={styles.buttonContainer}>
     <View>
-    <FontAwesome.Button onPressIn={()=>{setvisible(true)}} name="facebook-official" size={30} backgroundColor="#fff" color='#3b5998' style={[{borderColor:'#3b5998'},styles.buttonStyle]} onPress={()=>{}}>
+    <FontAwesome.Button onPressIn={()=>{setvisible(true); setmdtype('FACEBOOK')}} name="facebook-official" size={30} backgroundColor="#fff" color='#3b5998' style={[{borderColor:'#3b5998'},styles.buttonStyle]} onPress={()=>{}}>
     <Text style={[{color:'#3b5998',},styles.buttonText]}>Continue With Facebook</Text>
   </FontAwesome.Button>
   </View>
   <View>
-  <FontAwesome.Button name="google" size={30} backgroundColor="#fff" color='red' style={[{borderColor:'red'},styles.buttonStyle]} onPress={()=>{}}>
+  <FontAwesome.Button name="google" onPressIn={()=>{setvisible(true);setmdtype("GOOGLE")}} size={30} backgroundColor="#fff" color='red' style={[{borderColor:'red'},styles.buttonStyle]} onPress={()=>{}}>
     <Text style={[{color:'red',},styles.buttonText]}>Continue With Google</Text>
   </FontAwesome.Button>
   </View>
   <View>
-  <FontAwesome.Button name="phone-square" size={30} backgroundColor="#fff" color='green' style={[{borderColor:'green'},styles.buttonStyle]} onPress={()=>{}}>
+  <FontAwesome.Button onPressIn={()=>{props.navigation.navigate('LoginWithPhone')}} name="phone-square" size={30} backgroundColor="#fff" color='green' style={[{borderColor:'green'},styles.buttonStyle]} onPress={()=>{}}>
     <Text style={[{color:'green',},styles.buttonText]}>Continue With Phone</Text>
   </FontAwesome.Button>
   </View>
   <View>
-  <FontAwesome.Button name="envelope" size={30} backgroundColor="#fff" color='grey' style={[{borderColor:'grey'},styles.buttonStyle]} onPress={()=>{}}>
+  <FontAwesome.Button onPressIn={()=>{props.navigation.navigate('LoginWithEmail')}} name="envelope" size={30} backgroundColor="#fff" color='grey' style={[{borderColor:'grey'},styles.buttonStyle]} onPress={()=>{}}>
     <Text style={[{color:'grey',},styles.buttonText]}>Continue With Email</Text>
   </FontAwesome.Button>
   </View>
@@ -52,7 +56,6 @@ const Login=(props)=>{
 );
 }
 export default Login;
-console.log(windowHeight,windowWidth);
 const styles= StyleSheet.create({
     container:{
         flex:1,

@@ -1,14 +1,18 @@
 import React from 'react';
-import {View,Image,Text,StyleSheet, TouchableWithoutFeedbackComponent} from 'react-native';
+import {View,Image,Text,StyleSheet,} from 'react-native';
 import {FontAwesome} from '@expo/vector-icons'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
+import theme from '../../assets/Theme';
 const WelcomScreen=(props)=>{
     return(<>
     <SafeAreaView style={styles.container}>
-        <TouchableOpacity onPress={()=>{props.navigation.navigate('Auth')}}>
-        <Image source={require('../../assets/Triangle/Login_logo.png')} resizeMode='contain' style={styles.logoimg} />
-        </TouchableOpacity>
+        <View style={styles.imgcontainer}>
+        <Image source={require('../../assets/Triangle/Login_logo.png')} onMagicTap={()=>{props.navigation.navigate('Auth')}} resizeMode='contain' style={styles.logoimg} /> 
+        </View>
+        <View style={styles.btncontainer}>
+            <FontAwesome shouldRasterizeIOS={true} onPress={()=>{props.navigation.navigate('Auth')}} name='arrow-circle-o-right' size={50} color='black' style={styles.btnnext}/>
+            <Text style={styles.btntxt}>Continue</Text>
+        </View>
     </SafeAreaView>
     </>
 );
@@ -17,11 +21,27 @@ export default WelcomScreen;
 const styles= StyleSheet.create({
     container:{
         flex:1,
-        flexBasis:100,
         justifyContent:'center',
+    },
+    imgcontainer:{
+        flex:3,
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'#fff'
+    },
+    btncontainer:{
+        flex:2,
+        backgroundColor:'white',
         alignItems:'center'
     },
+    btnnext:{
+        backgroundColor:'#fff',
+    },
+    btntxt:{
+        padding:5,
+        ...theme.fonts.medium,
+    },
     logoimg:{
-         width:250,
+        width:'90%'
     }
 });

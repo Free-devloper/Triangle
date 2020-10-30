@@ -1,0 +1,40 @@
+Uhmmm its basically an ecommerce multi vendor app , where people can order from stores
+
+Each vendor has a store for himself
+Each store has a cart where a user can either checkout directly from the cart which i call the (minicart)
+
+or can move items ( theres a tab , where you click move items to main cart) where the items are moved from minicart to maincart
+
+The maincart is basically to allow checkout from different stores nothing else.
+
+
+
+-------
+
+
+There are different categories,
+there is chat implemented ( socket ) where a user can directly chat with the vendor - " vendor can only respond through the vendor dashboard"
+Users can follow a store to check for updates " if a store had a new thing available"
+
+
+
+----
+
+The backend is almost complete , has some bugs, but functionally working fine. Please check the "
+
+Your work will basically involve the mobile apps only , it would be a plus if you have a backend developer that can help with fixing backend bugs ( if required )
+
+---
+
+
+Hi, so ill share the 2 links, one is to drive , and contains the screens and flow.
+
+The other contains illustrative videos of the app ( working in swift) just for your reference
+
+https://drive.google.com/drive/folders/1BgqnqcqluIrUIjkmmUdB8KypDgUbsKoT?usp=sharing
+
+and below link for videos:
+
+https://drive.google.com/drive/folders/1NnVLq_Z2Z_yK4nrWUjwnjSFv6P6ALNSt?usp=sharing
+
+
