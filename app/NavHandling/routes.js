@@ -17,6 +17,7 @@ import Account from '../Screens/App/Account';
 import theme from '../assets/Theme/index';
 import FlatIcon from '../assets/Fonts/index'
 import {Loading} from '../Screens/Loading';
+import Categories from '../Screens/App/Categories';
 const Stack=createStackNavigator();
 const BottomTab=createBottomTabNavigator();
 const WelcomeStack=()=>{
@@ -37,7 +38,15 @@ const AuthStack=()=>{
             <Stack.Screen name='LoginWithPhone' component={LoginWithPhone}/>
             <Stack.Screen name='LoginConfirmationCode' component={LoginConfirmationCode}/>
             <Stack.Screen name="LoginWithEmail" component={LoginWithEmail}/>
-            <Stack.Screen name="AppTab" component={AppTab}/>
+            <Stack.Screen name="AppTab" component={AppStack}/>
+        </Stack.Navigator>
+    )
+}
+const AppStack=()=>{
+    return(
+        <Stack.Navigator initialRouteName='HomeComp' headerMode='none'>
+            <Stack.Screen name='Home' component={AppTab}/>
+            <Stack.Screen name='Categories' component={Categories}/>
         </Stack.Navigator>
     )
 }

@@ -74,8 +74,10 @@ const styles= StyleSheet.create({
     },
     buttonContainer:{
         flex:1,
-        justifyContent:'space-evenly',
         flexGrow:1,
+        marginTop:20,
+        maxHeight:windowHeight,
+        maxWidth:windowWidth
     },
     buttonStyle:{
         width:'100%',
@@ -85,6 +87,7 @@ const styles= StyleSheet.create({
         borderRadius:5,
         padding:10,
         borderWidth:2,
+        marginBottom:10,
     },
     buttonText:{
         ...theme.fonts.medium,
@@ -109,7 +112,6 @@ const styles= StyleSheet.create({
     closebuttontxt:{
         textAlign:'center',
         fontSize:18,
-        elevation:20
     },
     termstext:{
         ...theme.fonts.regular,
