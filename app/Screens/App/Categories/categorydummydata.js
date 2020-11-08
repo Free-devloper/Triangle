@@ -39,3 +39,14 @@ export const categoriesimg=[
     ["Travel",require('../../../assets/AppIcons/Travels.png')],
     ["Intetnet",require('../../../assets/AppIcons/Internet.png')]
 ]
+export const categoriesimgdata=[
+    ["Appliances",require('../../../assets/AppIcons/Appliances.png')],
+    ["Health",require('../../../assets/AppIcons/Health.png')],
+    ["Education",require('../../../assets/AppIcons/Education.png')],
+    ["Business",require('../../../assets/AppIcons/Business.png')],
+    ["Automobiles",require('../../../assets/AppIcons/Automobile.png')],
+    ["Clothing",require('../../../assets/AppIcons/Clothes.png')],
+    ["Electronics",require('../../../assets/AppIcons/Electronics.png')],
+    ["Furniture",require('../../../assets/AppIcons/Furniture.png')],
+    ["Jobs",require('../../../assets/AppIcons/Jobs.png')]
+]

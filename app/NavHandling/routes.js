@@ -18,6 +18,9 @@ import theme from '../assets/Theme/index';
 import FlatIcon from '../assets/Fonts/index'
 import {Loading} from '../Screens/Loading';
 import Categories from '../Screens/App/Categories';
+import AddProductdetails from '../Screens/App/Product/Addproduct';
+import ProductDetails from '../Screens/App/Product/ProductDetails';
+import Uploadproductpic from '../Screens/App/Product/Addproduct/UploadproductPic';
 const Stack=createStackNavigator();
 const BottomTab=createBottomTabNavigator();
 const WelcomeStack=()=>{
@@ -44,16 +47,26 @@ const AuthStack=()=>{
 }
 const AppStack=()=>{
     return(
-        <Stack.Navigator initialRouteName='HomeComp' headerMode='none'>
+        <Stack.Navigator initialRouteName='Home' headerMode='none'>
             <Stack.Screen name='Home' component={AppTab}/>
             <Stack.Screen name='Categories' component={Categories}/>
+            <Stack.Screen name='Product' component={ProductStack}/>
         </Stack.Navigator>
+    )
+}
+const ProductStack=()=>{
+    return(
+        <Stack.Navigator headerMode='none'>
+            <Stack.Screen name='ProductDetailsScreen' component={ProductDetails}/>
+            <Stack.Screen name='AddProductDetailsScreen' component={AddProductdetails}/>
+            <Stack.Screen name='Uploadproductpic'  component={Uploadproductpic} />
+         </Stack.Navigator>
     )
 }
 const AppTab=()=>{
     return(
-        <BottomTab.Navigator initialRouteName='Home' tabBarOptions={{style:styles.tabbarstyle,inactiveTintColor:'#000',activeTintColor:'#fff',activeBackgroundColor:'#5115e8',iconStyle:styles.iconstyle,tabStyle:styles.tabStyle,labelStyle:styles.labeltxt}}>
-            <BottomTab.Screen name="HOME" component={Home} options={{tabBarLabel:'HOME',tabBarIcon: ({color,size}) => (
+        <BottomTab.Navigator initialRouteName='HomeComp' tabBarOptions={{style:styles.tabbarstyle,inactiveTintColor:'#000',activeTintColor:'#fff',activeBackgroundColor:'#5115e8',iconStyle:styles.iconstyle,tabStyle:styles.tabStyle,labelStyle:styles.labeltxt}}>
+            <BottomTab.Screen name="HomeComp" component={Home} options={{tabBarLabel:'HOME',tabBarIcon: ({color,size}) => (
            <FlatIcon name='home' size={size} color={color}/> 
           )}} />
             <BottomTab.Screen name="Chats" component={Chat} options={{tabBarLabel:'CHATS',tabBarIcon: ({color,size}) => (

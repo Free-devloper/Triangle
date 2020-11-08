@@ -9,7 +9,7 @@ const Home=(props)=>{
     return(
         <>
         <Header childern={<HeaderHomeComp />} height={100}/>
-        <ScrollView style={{marginTop:100}}>
+        <ScrollView style={{marginTop:100+StatusBarHeight}} showsVerticalScrollIndicator={false} >
         <HomeComp {...props}/>
         </ScrollView>
         </>

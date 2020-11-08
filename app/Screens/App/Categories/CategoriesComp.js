@@ -19,7 +19,6 @@ const CategoriesComp=()=>{
         alert('Depth Reached')
     }
     } 
-    console.log(route.params.data)
     const renderSeparator = () => {  
         return (  
             <View  

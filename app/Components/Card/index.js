@@ -6,9 +6,9 @@ import theme from '../../assets/Theme';
 const MyCard = (props) => {
     // let imgurl=`../../assets/AppIcons/${props.name}.png`;
     return(
-    <Card style={styles.container}>
+    <Card style={styles.container} onPress={()=>{props.action()}}>
         <View style={styles.contentcontainer}>
-            <Image source={props.name}  style={styles.img} resizeMode='contain' />
+            <Image source={props.imgurl}  style={styles.img} resizeMode='contain' />
     <Text style={styles.imgtxt}>{props.title}</Text>
         </View>
   </Card>

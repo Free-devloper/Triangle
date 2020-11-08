@@ -7,7 +7,7 @@ const HeaderSellComp=(props)=>{
     const navigation=useNavigation();
      return(
          <>
-      <Appbar.BackAction onPress={()=>{navigation.navigate('HOME')}} color='#fff' />
+      <Appbar.BackAction onPress={()=>{navigation.goBack()}} color='#fff' />
       <Appbar.Content title={props.HeaderTitle} style={styles.contenttext}/>
       </>
      )
