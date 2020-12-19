@@ -82,7 +82,7 @@ const uploadproductpicComp = (props) => {
                     </TouchableOpacity>
             </View>
             <View style={styles.nxtbtn}>
-                <PaperButton mode="contained" disabled={!image.length<1 ? false:true} onPress={()=>alert('Success')}   style={styles.btnnext} >
+                <PaperButton mode="contained" disabled={!image.length<1 ? false:true} onPress={()=>props.navigation.navigate('SetPrice')}   style={styles.btnnext} >
                     NEXT
                 </PaperButton>
             </View>

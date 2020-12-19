@@ -21,6 +21,7 @@ import Categories from '../Screens/App/Categories';
 import AddProductdetails from '../Screens/App/Product/Addproduct';
 import ProductDetails from '../Screens/App/Product/ProductDetails';
 import Uploadproductpic from '../Screens/App/Product/Addproduct/UploadproductPic';
+import SetPrice from '../Screens/App/Product/Addproduct/SetPrice';
 const Stack=createStackNavigator();
 const BottomTab=createBottomTabNavigator();
 const WelcomeStack=()=>{
@@ -60,6 +61,7 @@ const ProductStack=()=>{
             <Stack.Screen name='ProductDetailsScreen' component={ProductDetails}/>
             <Stack.Screen name='AddProductDetailsScreen' component={AddProductdetails}/>
             <Stack.Screen name='Uploadproductpic'  component={Uploadproductpic} />
+            <Stack.Screen name='SetPrice'  component={SetPrice} />
          </Stack.Navigator>
     )
 }
